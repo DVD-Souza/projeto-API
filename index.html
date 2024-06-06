@@ -13,19 +13,60 @@
     <main>
         <div class="container">
             <div>
-                <h2>Veja a frequência do seu nome: </h2>
+                <h2>Veja a frequência do seu nome, basta escreve-lo e pesquisar: </h2>
                 <form id="nomes">
                     <input type="text" name="busca" id="busca" placeholder="Digite aqui" required>
-                    <input id="submit" type="submit" value="enviar">
+                    <input id="env1" type="submit" value="enviar">
                 </form>
             </div>
             <div id="resultado"></div>
         </div>
-        <div class="container"><h2>Veja a frequência do seu nome: </h2></div>
-        <div class="container"><h2>Veja a frequência do seu nome: </h2></div>
-        <div class="container"><h2>Veja a frequência do seu nome: </h2></div>
-        <div class="container"><h2>Veja a frequência do seu nome: </h2></div>
+        <div class="container">
+            <h2>Veja o perfil de qualquer pais com os dados do IBGE, pesquise aqui: </h2>
+            <h3>Use essa lista de <a href="https://servicodados.ibge.gov.br/api/docs/paises#api-acervo">identificadores.</a></h3>
+            <div>
+                <form id="paises">
+                    <input type="text" name="buscapaises" id="buscapaises" placeholder="Digite aqui" required>
+                    <input id="env2" type="submit" value="enviar">
+                </form>
+            </div>
+            <div id="resultadoPaises"></div>
+        </div>
+        <div class="container">
+            <h2>Pesquise sobre as principais novidades do IBGE: </h2>
+            <div>
+                <form id="noticias">
+                    <input type="text" name="buscanoticias" id="buscanoticias" placeholder="Digite aqui" required>
+                    <input id="env3" type="submit" value="enviar">
+               </form>
+            </div>
+            <div id="resultadoNoticias"></div>
+        </div>
+        <div class="container">
+            <h2>Pesquise sobre os produtos do IBGE: </h2>
+            <div>
+                <form id="produtos">
+                        <input type="text" name="buscaprodutos" id="buscaprodutos" placeholder="Digite aqui" required>
+                        <input id="env4" type="submit" value="enviar">
+                </form>
+            </div>
+            <div id="resultadoprodutos"></div>
+        </div>
+        <div class="container">
+            <h2>Pesquise as localidades por UF: </h2>
+            <div>
+                <form id="locais">
+                    <input type="text" name="buscaLocal" id="buscaLocal" placeholder="Digite aqui" required>
+                    <input id="env5" type="submit" value="enviar">
+                </form>
+            </div>
+            <div id="resultadoLocal"></div>
+        </div>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js" ></script>
+    <script src="paises.js" ></script>
+    <script src="noticias.js"></script>
+    <script src="produtos.js"></script>
+    <script src="localidades.js"></script>
 </body>
 </html>
