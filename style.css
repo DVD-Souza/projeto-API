@@ -4,6 +4,7 @@ body{
 
 header{
     display: flex;
+    flex-direction: column;
     margin: 1%;
     padding: 1%;
     border:solid black 2px;
@@ -15,17 +16,20 @@ header{
 main{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.container1{
+.container{
     margin: 1%;
     padding: 10px;
     border:solid black 2px;
     border-radius: 10px;
     background-color: rgb(176, 234, 245);
     font-family:Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-#resultado{
-    margin-top: 6px;
+div.nome{
+    margin-top: 15px;
 }
