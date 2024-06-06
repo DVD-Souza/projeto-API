@@ -1,32 +1,72 @@
-let form = document.querySelector('#localidade');
-form.addEventListener('submit', function(event){
+let form = document.querySelector('#nomes');
+form.addEventListener('submit', function(event) {
     event.preventDefault();
     let dadosForm = new FormData(form);
     buscarLocalidade(dadosForm.get('busca'));
 })
 
-function buscarLocalidade(busca){
-
-    const urlApi = new URL(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${busca}`);
-    //urlApi.searchParams.append('orderBy', busca);
+function buscarLocalidade(busca) {
+    const buscaEncoded = encodeURIComponent(busca);
+    const urlApi = new URL(`https://servicodados.ibge.gov.br/api/v2/censos/nomes/${buscaEncoded}`);
 
     fetch(urlApi)
-    .then(response=>{
-        if (response.ok==true){
-            console.log("deu certo")
-            return response.json()
-        }else{
+    .then(response => {
+        if (response.ok) {
+            console.log("deu certo");
+            return response.json();
+        } else {
             let resultado = document.getElementById('resultado');
-            resultado.innerText = "Não foi possivel atender sua solicitação.";
-            console.log("deu errado")
+            resultado.innerText = "Não foi possível atender sua solicitação.";
+            console.log("deu errado");
         }
     })
-    .then(data=>{
-        console.log(data);
-    })
+    .then(data => {
+        let nomes = data;
+        nomes.forEach(dados => {
+          let nome = dados.nome;
+          let localidade = dados.localidade;
+
+          dados.res.forEach(dado =>{
+            let periodo = dado.periodo;
+            let frequencia = dado.frequencia;
+
+            let div = document.createElement('div');
+            div.className = 'conteiner1';
+
+            let divNome = document.createElement('div');
+            divNome.className = 'nome';
+            divNome.textContent = `Nome: ${nome}`;
+
+            let divPeriodo = document.createElement('div');
+            divPeriodo.className = 'periodo';
+            divPeriodo.textContent = `Período: ${periodo}`;
+
+            let divFrequencia = document.createElement('div');
+            divFrequencia.className = 'frequencia';
+            divFrequencia.textContent = `Frequência: ${frequencia}`;
+
+            let divLocalidade = document.createElement('div');
+            divLocalidade.className = 'localidade';
+            divLocalidade.textContent = `Localidade: ${localidade || 'Não disponível'}`;
+
+            div.appendChild(divNome);
+            div.appendChild(divPeriodo);
+            div.appendChild(divFrequencia);
+            div.appendChild(divLocalidade);
+
+            resultado.appendChild(div);
+          })
+        });
+    });
+  }  
+      /*.catch(error => {
+        console.error("Erro ao fazer a requisição:", error);
+        let resultado = document.getElementById('resultado');
+        resultado.innerText = "Ocorreu um erro ao processar a solicitação.";
+    });
 }
 
-/*
+
 let form = document.getElementById('formulario');
 form.addEventListener('submit',function(event){
     event.preventDefault()
