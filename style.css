@@ -24,6 +24,11 @@ header{
     max-height: 100%;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 div.nome{
     margin-top: 15px;
 }
