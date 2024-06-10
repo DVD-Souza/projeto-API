@@ -13,19 +13,12 @@ header{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-main{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: self-start;
-}
-
 .container{
     margin: 1%;
     padding: 10px;
     border:solid black 2px;
     border-radius: 10px;
-    background-color: rgb(176, 234, 245);
+    background-color: #b0eaf5;
     font-family:Arial, Helvetica, sans-serif;
     max-width: 100%;
     max-height: 100%;
@@ -41,4 +34,18 @@ div.distrito{
 
 div.titulo{
     margin-top: 15px;
+}
+
+a{
+    text-decoration:none;
+}
+
+#ir-topo{
+    color: white;
+    background-color: #69c8db;
+    padding: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 3px 3px 3px gray;
 }

@@ -7,11 +7,21 @@
     <title>QueryIT</title>
 </head>
 <body>
-    <header>
+    <header id="topo">
         <h1>QueryIT: Aplicação com a API do IBGE</h1>
     </header>
     <main>
         <div class="container">
+            <h2>Índice:</h2>
+            <ul>
+                <a href="#frequencia"><li>Frequência de Nomes</li></a>
+                <a href="#paises"><li>Perfil de Paises (dados IBGE)</li></a>
+                <a href="#novidades"><li>Principais novidades IBGE</li></a>
+                <a href="#produtos"><li>Produtos IBGE</li></a>
+                <a href="#localidades"><li>Localidades por UF</li></a>
+            </ul>
+        </div>
+        <div id="frequencia" class="container">
             <div>
                 <h2>Veja a frequência do seu nome, basta escreve-lo e pesquisar: </h2>
                 <form id="nomes">
@@ -21,7 +31,7 @@
             </div>
             <div id="resultado"></div>
         </div>
-        <div class="container">
+        <div id="paises" class="container">
             <h2>Veja o perfil de qualquer pais com os dados do IBGE, pesquise aqui: </h2>
             <h3>Use essa lista de <a href="https://servicodados.ibge.gov.br/api/docs/paises#api-acervo">identificadores.</a></h3>
             <div>
@@ -32,7 +42,7 @@
             </div>
             <div id="resultadoPaises"></div>
         </div>
-        <div class="container">
+        <div id="novidades" class="container">
             <h2>Pesquise sobre as principais novidades do IBGE: </h2>
             <div>
                 <form id="noticias">
@@ -42,7 +52,7 @@
             </div>
             <div id="resultadoNoticias"></div>
         </div>
-        <div class="container">
+        <div id="produtos" class="container">
             <h2>Pesquise sobre os produtos do IBGE: </h2>
             <div>
                 <form id="produtos">
@@ -52,7 +62,7 @@
             </div>
             <div id="resultadoprodutos"></div>
         </div>
-        <div class="container">
+        <div id="localidades" class="container">
             <h2>Pesquise as localidades por UF: </h2>
             <div>
                 <form id="locais">
@@ -62,6 +72,7 @@
             </div>
             <div id="resultadoLocal"></div>
         </div>
+        <a title="Ir para o topo da página" id="ir-topo" href="#topo">&#9650;</a>
     </main>
     <script src="script.js" ></script>
     <script src="paises.js" ></script>
