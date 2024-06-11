@@ -10,6 +10,7 @@ let resultado3 = document.getElementById('resultadoNoticias');
 function buscarNoticias(buscanoticias) {
     const urlApi = new URL('http://servicodados.ibge.gov.br/api/v3/noticias/');
     urlApi.searchParams.append('busca', buscanoticias);
+    urlApi.searchParams.append('qtd', 5);
 
     fetch(urlApi)
     .then(response => {

@@ -10,6 +10,7 @@ let resultado4 = document.getElementById('resultadoprodutos');
 function buscarProdutos(buscaprodutos) {
     const urlApi = new URL('https://servicodados.ibge.gov.br/api/v1/produtos/');
     urlApi.searchParams.append('titulo', buscaprodutos);
+    //Os parametros de busca não englobam um limitador de quantidade de produtos por pagina. 
 
     fetch(urlApi)
     .then(response => {
